@@ -84,10 +84,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--dark);background:var(--warm);o
 .btn-ios{background:white;color:#007AFF}
 .btn-support{background:rgba(255,255,255,0.15);color:white;border:1.5px solid rgba(255,255,255,0.4);font-size:14px;padding:11px 22px}
 .btn-support:hover{background:rgba(255,255,255,0.25)}
-.nums{display:flex;gap:26px;margin-top:14px;animation:fu .5s ease .3s both}
-.nums .n{color:white;text-align:center}
-.nums .nv{font-size:20px;font-weight:700}
-.nums .nl{font-size:10.5px;opacity:0.78}
+.offer-line{color:rgba(255,255,255,0.85);font-size:13px;margin-top:14px;animation:fu .5s ease .3s both}
 .trust{background:var(--dark);padding:8px 16px;text-align:center;color:rgba(255,255,255,0.65);font-size:11.5px}
 .trust b{color:#6FE89B}
 .gal{padding:22px 0 20px;overflow:hidden;background:var(--warm)}
@@ -176,7 +173,7 @@ footer a{color:#6FE89B;text-decoration:none}
 @keyframes fu{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 @media(min-width:768px){.hero{padding:36px 40px 28px}.sec{padding:36px 40px}.feats{grid-template-columns:repeat(3,1fr)}.steps{grid-template-columns:1fr 1fr}.rv{flex:0 0 300px}.pp{grid-template-columns:1fr 1fr 1fr}.priv{padding:28px 32px}.shot{width:250px}}
 @media(min-width:1100px){.hero h1{font-size:46px}.sec{max-width:1000px}}
-@media(max-width:480px){.hero{padding:22px 16px 18px}.nums{gap:16px}.feats{grid-template-columns:1fr}.pp{grid-template-columns:1fr}.sec{padding:22px 14px}.price-wrap{grid-template-columns:1fr}}
+@media(max-width:480px){.hero{padding:22px 16px 18px}.feats{grid-template-columns:1fr}.pp{grid-template-columns:1fr}.sec{padding:22px 14px}.price-wrap{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -199,11 +196,7 @@ footer a{color:#6FE89B;text-decoration:none}
     <div class="btn-row">
         <button onclick="downloadNow()" class="btn btn-android" style="border:none;cursor:pointer;font-family:inherit">&#x1F4F2; Download SugarBreak</button>
     </div>
-    <div class="nums">
-        <div class="n"><div class="nv">Free</div><div class="nl">Sugar scanner</div></div>
-        <div class="n"><div class="nv">7-day</div><div class="nl">Coach trial</div></div>
-        <div class="n"><div class="nv">Personalized</div><div class="nl">Notifications</div></div>
-    </div>
+    <p class="offer-line">Scanner &bull; Coach &bull; Motivation vault &bull; Personalized notifications</p>
 </header>
 
 <section class="gal">
@@ -211,20 +204,20 @@ footer a{color:#6FE89B;text-decoration:none}
     <h2>What you actually get</h2>
     <div class="shots">
         <div class="shot">
-            <img src="predict.png" alt="SugarBreak sendinhg personalized notificatiosn basis user history" loading="lazy" width="230">
+            <img src="streak.png" alt="SugarBreak home screen showing a sugar-free streak counter and daily coaching" loading="lazy" width="230">
         </div>
-      <div class="shot">
-            <img src="coach.png" alt="SugarBreak AI coach chatting and giving personalized sugar-quitting advice" loading="lazy" width="230">
-        </div>
-       <div class="shot">
-            <img src="vault.png" alt="SugarBreak motivation vault with voice notes and photos of why you started" loading="lazy" width="230">
+        <div class="shot">
+            <img src="sos.png" alt="SugarBreak craving SOS rescue screen with breathing guide and coach chat" loading="lazy" width="230">
         </div>
         <div class="shot">
             <img src="scanner.png" alt="SugarBreak AI food scanner showing the sugar content of a meal" loading="lazy" width="230">
         </div>
-       <div class="shot">
-            <img src="streak.png" alt="SugarBreak home screen showing a sugar-free streak counter and daily coaching" loading="lazy" width="230">
-        </div>  
+        <div class="shot">
+            <img src="vault.png" alt="SugarBreak motivation vault with voice notes and photos of why you started" loading="lazy" width="230">
+        </div>
+        <div class="shot">
+            <img src="coach.png" alt="SugarBreak AI coach chatting and giving personalized sugar-quitting advice" loading="lazy" width="230">
+        </div>
     </div>
 </section>
 
@@ -239,18 +232,6 @@ footer a{color:#6FE89B;text-decoration:none}
         <div class="ft"><div class="ft-i">&#x1F525;</div><div class="ft-txt"><h3>Streak &amp; body timeline</h3><p>See your sugar-free streak grow and unlock body milestones as your cravings fade.</p></div></div>
         <div class="ft"><div class="ft-i">&#x1F512;</div><div class="ft-txt"><h3>Private by design</h3><p>No account needed. Your journey and your vault stay on your device.</p></div></div>
     </div>
-</section>
-
-<section class="hiw sec" style="max-width:none">
-<div style="max-width:960px;margin:0 auto">
-    <div class="lbl">How it works</div>
-    <h2>Three steps to your first sugar-free week</h2>
-    <div class="steps">
-        <div class="st"><div class="st-n">1</div><div><h3>Set your why</h3><p>Tell the coach why you're quitting and record a voice note for the hard days. It goes in your private vault.</p></div></div>
-        <div class="st"><div class="st-n">2</div><div><h3>Scan before you eat</h3><p>Check any food for hidden sugar. When a craving hits, open the SOS and let the coach talk you through it.</p></div></div>
-        <div class="st"><div class="st-n">3</div><div><h3>Keep the streak alive</h3><p>Check in each day, watch your streak grow, and feel the cravings fade as your body resets.</p></div></div>
-    </div>
-</div>
 </section>
 
 <section class="sec" style="padding-top:8px">
@@ -285,22 +266,6 @@ footer a{color:#6FE89B;text-decoration:none}
             <tr><td>Free to start</td><td class="mc yes">&#x2713; Scanner free</td><td>Limited</td><td class="no">&#x2717; Paywalled</td></tr>
             <tr><td>Works offline</td><td class="mc yes">&#x2713; On-device</td><td class="no">&#x2717; No</td><td class="no">&#x2717; No</td></tr>
         </table>
-    </div>
-</section>
-
-<section class="sec" style="padding-top:8px">
-    <div class="priv">
-        <div class="lk">&#x1F512;</div>
-        <h2>Your journey is private</h2>
-        <p>SugarBreak keeps your streak, check-ins and motivation vault on your own device. No account, nothing sold to advertisers.</p>
-        <div class="pp">
-            <div class="ppt"><span class="ck">&#x2713;</span> No sign-up required</div>
-            <div class="ppt"><span class="ck">&#x2713;</span> Data stays on-device</div>
-            <div class="ppt"><span class="ck">&#x2713;</span> Voice notes stay private</div>
-            <div class="ppt"><span class="ck">&#x2713;</span> Nothing sold to advertisers</div>
-            <div class="ppt"><span class="ck">&#x2713;</span> Cancel anytime</div>
-            <div class="ppt"><span class="ck">&#x2713;</span> No hidden charges</div>
-        </div>
     </div>
 </section>
 
