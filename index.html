@@ -36,7 +36,7 @@
   "description": "SugarBreak is an AI coach that helps you quit added sugar. It gets you through cravings with a 10-minute rescue and a coach that talks you down, scans your food for hidden sugar, keeps a private motivation vault of your reasons, and tracks your sugar-free streak. The scanner is free and no sign-up is required.",
   "offers": [
     { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free sugar scanner and a 7-day trial of the AI coach, no card required" },
-    { "@type": "Offer", "category": "subscription", "description": "Premium: unlimited AI coaching, craving rescue, and daily briefings. Monthly, cancel anytime. Price varies by country." }
+    { "@type": "Offer", "category": "subscription", "description": "Premium: unlimited coaching, craving rescue, and daily briefings. Monthly, cancel anytime. Price varies by country." }
   ],
   "featureList": [
     "AI coach that talks you through a craving in real time",
@@ -131,8 +131,9 @@ h2{font-family:'Playfair Display',serif;font-size:clamp(20px,4vw,30px);color:var
 .st h3{font-size:13px;font-weight:700;margin-bottom:2px}
 .st p{font-size:12px;color:var(--muted);line-height:1.4}
 .feats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}
-.ft{background:white;padding:16px;border-radius:14px;border:1px solid #E4EFE8}
-.ft-i{font-size:22px;margin-bottom:6px}
+.ft{background:white;padding:14px;border-radius:14px;border:1px solid #E4EFE8;display:flex;align-items:flex-start;gap:10px}
+.ft-i{font-size:22px;flex-shrink:0;line-height:1}
+.ft-txt{min-width:0}
 .ft h3{font-size:12px;font-weight:700;margin-bottom:3px}
 .ft p{font-size:11px;color:var(--muted);line-height:1.4}
 .price-wrap{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px;max-width:560px;margin-left:auto;margin-right:auto}
@@ -201,10 +202,9 @@ footer a{color:#6FE89B;text-decoration:none}
     <div class="nums">
         <div class="n"><div class="nv">Free</div><div class="nl">Sugar scanner</div></div>
         <div class="n"><div class="nv">7-day</div><div class="nl">Coach trial</div></div>
-        <div class="n"><div class="nv">No</div><div class="nl">Sign-up needed</div></div>
+        <div class="n"><div class="nv">Personalized</div><div class="nl">Notifications</div></div>
     </div>
 </header>
-<div class="trust"><b>&#x1F512;</b> Your data stays on your device &bull; Nothing sold &bull; No account required</div>
 
 <section class="gal">
     <div class="lbl">See it in action</div>
@@ -212,28 +212,18 @@ footer a{color:#6FE89B;text-decoration:none}
     <div class="shots">
         <div class="shot">
             <img src="streak.png" alt="SugarBreak home screen showing a sugar-free streak counter and daily coaching" loading="lazy" width="230">
-            <div class="cap">Watch your streak grow</div>
-            <div class="sub">Every sugar-free day counts — and you can see it</div>
         </div>
         <div class="shot">
             <img src="sos.png" alt="SugarBreak craving SOS rescue screen with breathing guide and coach chat" loading="lazy" width="230">
-            <div class="cap">Beat the craving</div>
-            <div class="sub">A 10-minute rescue that talks you down in real time</div>
         </div>
         <div class="shot">
             <img src="scanner.png" alt="SugarBreak AI food scanner showing the sugar content of a meal" loading="lazy" width="230">
-            <div class="cap">See the hidden sugar</div>
-            <div class="sub">Scan any food — packaged, homemade, or a photo of your plate</div>
         </div>
         <div class="shot">
             <img src="vault.png" alt="SugarBreak motivation vault with voice notes and photos of why you started" loading="lazy" width="230">
-            <div class="cap">Remember your why</div>
-            <div class="sub">Your reasons, in your own voice, for the hard days</div>
         </div>
         <div class="shot">
             <img src="coach.png" alt="SugarBreak AI coach chatting and giving personalized sugar-quitting advice" loading="lazy" width="230">
-            <div class="cap">A coach that knows you</div>
-            <div class="sub">Personal advice that references your real streak</div>
         </div>
     </div>
 </section>
@@ -242,15 +232,12 @@ footer a{color:#6FE89B;text-decoration:none}
     <div class="lbl">Why it works</div>
     <h2>Quitting sugar is about the craving, not willpower</h2>
     <div class="feats">
-        <div class="ft"><div class="ft-i">&#x1F198;</div><h3>Craving SOS</h3><p>A 10-minute guided rescue with breathing and a coach that talks you down before you break your streak.</p></div>
-        <div class="ft"><div class="ft-i">&#x1F4AC;</div><h3>AI coach that knows you</h3><p>References your real streak, your triggers, and your reasons. Never generic advice.</p></div>
-        <div class="ft"><div class="ft-i">&#x1F50D;</div><h3>Sugar scanner</h3><p>Search or photograph any food and see the hidden sugar in teaspoons you can picture.</p></div>
-        <div class="ft"><div class="ft-i">&#x2705;</div><h3>Backed by real research</h3><p>Built on established sugar-addiction and habit-change science — not fads or guesswork.</p></div>
-        <div class="ft"><div class="ft-i">&#x1F510;</div><h3>Your motivation vault</h3><p>Save voice notes, photos and reasons you started. We play them back the moment a craving hits.</p></div>
-        <div class="ft"><div class="ft-i">&#x1F525;</div><h3>Streak &amp; body timeline</h3><p>See your sugar-free streak grow and unlock body milestones as your cravings fade.</p></div>
-        <div class="ft"><div class="ft-i">&#x2600;</div><h3>Daily coaching briefings</h3><p>A short personalized note each morning on what to expect and where to focus today.</p></div>
-        <div class="ft"><div class="ft-i">&#x1F4B0;</div><h3>Free scanner, honest pricing</h3><p>Full sugar scanner free forever. No hidden fees, no dark patterns — cancel the coach anytime.</p></div>
-        <div class="ft"><div class="ft-i">&#x1F512;</div><h3>Private by design</h3><p>No account needed. Your journey and your vault stay on your device.</p></div>
+        <div class="ft"><div class="ft-i">&#x1F198;</div><div class="ft-txt"><h3>Craving SOS</h3><p>A 10-minute guided rescue with breathing and a coach that talks you down before you break your streak.</p></div></div>
+        <div class="ft"><div class="ft-i">&#x1F4AC;</div><div class="ft-txt"><h3>Coach that knows you</h3><p>References your real streak, your triggers, and your reasons. Never generic advice.</p></div></div>
+        <div class="ft"><div class="ft-i">&#x1F50D;</div><div class="ft-txt"><h3>Sugar scanner</h3><p>Search or photograph any food and see the hidden sugar in teaspoons you can picture.</p></div></div>
+        <div class="ft"><div class="ft-i">&#x1F510;</div><div class="ft-txt"><h3>Your motivation vault</h3><p>Save voice notes, photos and reasons you started. We play them back the moment a craving hits.</p></div></div>
+        <div class="ft"><div class="ft-i">&#x1F525;</div><div class="ft-txt"><h3>Streak &amp; body timeline</h3><p>See your sugar-free streak grow and unlock body milestones as your cravings fade.</p></div></div>
+        <div class="ft"><div class="ft-i">&#x1F512;</div><div class="ft-txt"><h3>Private by design</h3><p>No account needed. Your journey and your vault stay on your device.</p></div></div>
     </div>
 </section>
 
@@ -279,7 +266,7 @@ footer a{color:#6FE89B;text-decoration:none}
             <div class="tag">Best value</div>
             <h3>Premium</h3>
             <div class="p">Unlimited</div>
-            <div class="d">Unlimited AI coaching, craving rescue and daily briefings. Monthly &mdash; cancel anytime.</div>
+            <div class="d">Unlimited coaching, craving rescue and daily briefings. Monthly &mdash; cancel anytime.</div>
         </div>
     </div>
     <p class="price-note">Prices vary by country and are shown in your local currency in the app. Subscriptions renew automatically until cancelled &mdash; manage or cancel anytime in your App Store or Google Play settings.</p>
@@ -339,12 +326,32 @@ footer a{color:#6FE89B;text-decoration:none}
 </section>
 
 <footer>
-    SugarBreak is a wellness app that helps you quit added sugar with AI coaching and a food scanner. It is not a medical device and does not provide medical advice.<br>
-    Made with &#x1F49A; in India &bull; <a href="mailto:Goyal.Sanchit@bcg.com">Contact</a> &bull; <a href="https://sanchitgoyal32.github.io/privacy_urls/sugarbreak.html">Privacy Policy</a>
+    SugarBreak is a wellness app that helps you quit added sugar with coaching and a food scanner. It is not a medical device and does not provide medical advice.<br>
+    Made with &#x1F49A; in India &bull; <a href="mailto:pagasis08@gmail.com">Contact</a> &bull; <a href="https://sanchitgoyal32.github.io/privacy_urls/sugarbreak.html">Privacy Policy</a>
     <br>&copy; 2026 SugarBreak
 </footer>
 
 <script>
+// Same Apps Script Web App as get/index.html — paste the same URL here too.
+const ANALYTICS_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyzvonYLyKcErYBNoF7JvTaJI6ODSa3WN8-A8pbcB-nOTZQFmmD0HdeYwqm-uG8W1hivA/exec";
+
+function logSiteClick(device){
+  var locale = navigator.language || navigator.userLanguage || '';
+  var countryGuess = locale.includes('-') ? locale.split('-')[1].toUpperCase() : '';
+  var timezone = '';
+  try { timezone = Intl.DateTimeFormat().resolvedOptions().timeZone; } catch (_) {}
+  try {
+    fetch(ANALYTICS_APPS_SCRIPT_URL, {
+      method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify({
+        type: 'click', utm_source: 'website', utm_medium: 'onsite', utm_campaign: '',
+        device: device, country_guess: countryGuess, timezone: timezone,
+        page: 'home', user_agent: navigator.userAgent
+      })
+    });
+  } catch (_) {}
+}
+
 // Single smart download function used by every button on the page — detects
 // iOS vs Android from the visitor's device and sends them straight to the
 // correct store, no intermediate menu or redirect page needed on-site.
@@ -352,9 +359,18 @@ function downloadNow(){
   var ua = navigator.userAgent || navigator.vendor || window.opera;
   var isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
   var isAndroid = /android/i.test(ua);
-  if(isIOS){ window.location.href = "https://apps.apple.com/app/id6774609169"; }
-  else if(isAndroid){ window.location.href = "https://play.google.com/store/apps/details?id=com.sugarbreak.app"; }
-  else { window.location.href = "get/"; } // desktop visitor — show both options
+  if(isIOS){
+    logSiteClick('ios');
+    window.location.href = "https://apps.apple.com/app/id6774609169";
+  } else if(isAndroid){
+    logSiteClick('android');
+    // Tag the referrer as 'website' so Play Install Referrer attributes this
+    // install correctly in the main Android analytics tab.
+    var referrer = encodeURIComponent('utm_source=website&utm_medium=onsite');
+    window.location.href = "https://play.google.com/store/apps/details?id=com.sugarbreak.app&referrer=" + referrer;
+  } else {
+    window.location.href = "get/"; // desktop visitor — show both options
+  }
 }
 </script>
 </body>
