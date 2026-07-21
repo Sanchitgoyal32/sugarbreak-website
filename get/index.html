@@ -1,1 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get SugarBreak</title>
+  <link rel="icon" type="image/png" href="../icon.png">
 
+  <script>
+    const APP_STORE_URL  = "https://apps.apple.com/app/id6774609169";
+    const PLAY_PACKAGE   = "com.sugarbreak.app";
+    // Same Apps Script Web App your Flutter app already posts analytics to —
+    // paste that same URL here. The script tells click events apart from user
+    // analytics via the "type":"click" field, so nothing collides.
+    const ANALYTICS_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyzvonYLyKcErYBNoF7JvTaJI6ODSa3WN8-A8pbcB-nOTZQFmmD0HdeYwqm-uG8W1hivA/exec";
+
+    function getUtm() {
+      const p = new URLSearchParams(window.location.search);
+      return {
+        source: p.get('utm_source') || '',
+        medium: p.get('utm_medium') || '',
+        campaign: p.get('utm_campaign') || ''
+      };
+    }
+
+    function logClick(device, utm) {
+      // Rough country estimate from the browser's locale (e.g. 'en-IN' -> 'IN')
+      // — Apps Script web apps don't receive a real IP address, so this is an
+      // honest estimate, not verified geolocation.
+      var locale = navigator.language || navigator.userLanguage || '';
+      var countryGuess = locale.includes('-') ? locale.split('-')[1].toUpperCase() : '';
+      var timezone = '';
+      try { timezone = Intl.DateTimeFormat().resolvedOptions().timeZone; } catch (_) {}
+
+      // Fire-and-forget — never blocks the redirect if this fails/is slow.
+      try {
+        fetch(ANALYTICS_APPS_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain' },
+          body: JSON.stringify({
+            type: 'click',
+            utm_source: utm.source, utm_medium: utm.medium, utm_campaign: utm.campaign,
+            device: device, country_guess: countryGuess, timezone: timezone,
+            page: 'get', user_agent: navigator.userAgent
+          })
+        });
+      } catch (_) {}
+    }
+
+    function detectAndRedirect() {
+      const ua = navigator.userAgent || navigator.vendor || window.opera;
+      const isIOS = /iPad|iPhone|iPod/.test(ua) ||
+        (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+      const isAndroid = /android/i.test(ua);
+      const utm = getUtm();
+
+      if (isIOS) {
+        logClick('ios', utm);
+        // Apple has no install-referrer equivalent for organic links — the
+        // click is still logged above via the tracker sheet.
+        window.location.href = APP_STORE_URL;
+      } else if (isAndroid) {
+        logClick('android', utm);
+        // Build the Play Store referrer param FROM the same utm values that
+        // were on THIS link — so whatever channel this link was shared on
+        // (Instagram, Reddit, etc.) is what the app's Play Install Referrer
+        // captures and logs into the main analytics sheet automatically.
+        const refParts = [];
+        if (utm.source) refParts.push('utm_source=' + encodeURIComponent(utm.source));
+        if (utm.medium) refParts.push('utm_medium=' + encodeURIComponent(utm.medium));
+        if (utm.campaign) refParts.push('utm_campaign=' + encodeURIComponent(utm.campaign));
+        const referrer = refParts.length
+          ? '&referrer=' + encodeURIComponent(refParts.join('&'))
+          : '';
+        window.location.href = 'https://play.google.com/store/apps/details?id=' + PLAY_PACKAGE + referrer;
+      }
+      // Desktop: no redirect, fallback buttons below are shown as-is.
+    }
+
+    window.onload = detectAndRedirect;
+  </script>
+
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0F172A;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+      padding: 24px;
+      box-sizing: border-box;
+    }
+    img.icon { width: 72px; height: 72px; border-radius: 18px; margin-bottom: 20px; }
+    h1 { font-size: 22px; margin-bottom: 8px; }
+    p { color: #94A3B8; margin-bottom: 28px; }
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      margin: 8px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+    }
+    .ios { background: #fff; color: #0F172A; }
+    .android { background: #16A34A; color: #fff; }
+  </style>
+</head>
+<body>
+  <img src="../icon.png" class="icon" alt="SugarBreak">
+  <h1>Taking you to SugarBreak…</h1>
+  <p>If nothing happens, choose your device below.</p>
+  <div>
+    <a class="btn ios" href="https://apps.apple.com/app/id6774609169">Download on the App Store</a>
+    <a class="btn android" href="https://play.google.com/store/apps/details?id=com.sugarbreak.app">Get it on Google Play</a>
+  </div>
+</body>
+</html>
