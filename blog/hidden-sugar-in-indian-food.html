@@ -44,7 +44,7 @@
 body{font-family:'DM Sans',sans-serif;color:var(--dark);background:var(--warm);line-height:1.7}
 nav{background:rgba(22,36,28,0.95);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;backdrop-filter:blur(10px)}
 nav .logo{display:flex;align-items:center;gap:8px;text-decoration:none}
-nav .logo .ic{width:28px;height:28px;background:linear-gradient(135deg,#1F9D57,#2BB56A);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px}
+nav .logo .ic{width:28px;height:28px;border-radius:8px;overflow:hidden;display:flex;align-items:center;justify-content:center}
 nav .logo span{color:white;font-size:16px;font-weight:700}
 nav .dl a{color:white;font-size:12px;font-weight:600;text-decoration:none;padding:7px 14px;border-radius:20px}
 article{max-width:720px;margin:0 auto;padding:0 20px 48px}
@@ -82,8 +82,8 @@ footer a{color:#6FE89B;text-decoration:none}
 </head>
 <body>
 <nav>
-    <a href="../index.html" class="logo"><span class="ic"><img src="../icon.png" alt="" style="width:24px;height:24px;border-radius:6px;object-fit:cover;vertical-align:middle"></span><span>SugarBreak</span></a>
-    <button onclick="downloadNow()" style="cursor:pointer;color:white;font-size:13px;font-weight:600;padding:8px 18px;border-radius:22px;border:none;background:linear-gradient(135deg,#1F9D57,#2BB56A);font-family:inherit">Download</button>
+    <a href="../index.html" class="logo"><span class="ic"><img src="../icon.png" alt="" style="width:100%;height:100%;object-fit:cover"></span><span>SugarBreak</span></a>
+    <a href="../index.html" style="color:white;font-size:13px;font-weight:600;padding:8px 16px;border-radius:22px;text-decoration:none;border:1.5px solid rgba(255,255,255,0.35);margin-right:8px">Home</a><button onclick="downloadNow()" style="cursor:pointer;color:white;font-size:13px;font-weight:600;padding:8px 18px;border-radius:22px;border:none;background:linear-gradient(135deg,#1F9D57,#2BB56A);font-family:inherit">Download</button>
 </nav>
 
 <article>
@@ -150,7 +150,7 @@ footer a{color:#6FE89B;text-decoration:none}
     <div class="cta">
         <h3>See the hidden sugar in your food</h3>
         <p>Wondering how much sugar is really hiding in what you're eating? Photograph any dish and see the sugar in teaspoons you can picture. No sign-up.</p>
-        <a href="https://play.google.com/store/apps/details?id=com.sugarbreak.app" class="btn">&#x1F4F1; Get SugarBreak free</a>
+        <button onclick="downloadNow()" class="btn" style="border:none;cursor:pointer;font-family:inherit">&#x1F4F1; Get SugarBreak free</button>
     </div>
 
     <div class="related">
